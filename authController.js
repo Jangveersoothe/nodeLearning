@@ -126,7 +126,7 @@ const resetPassword = async (req, res) => {
   const { password } = req.body;
 
   pool.query("SELECT * FROM users WHERE id = ?", [id], async (err, results) => {
-    if (err || results.length === 0) {
+    if (err || results.length == 0) {
       return res.status(404).json({ message: "User does not exist" });
     }
 
